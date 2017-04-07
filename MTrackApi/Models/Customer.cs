@@ -13,9 +13,9 @@ namespace MTrackApi.Models
 
         public Customer(int id, string code, string name)
         {
-            this.Id = id;
-            this.Code = code;
-            this.Name = name;
+            Id = id;
+            Code = code;
+            Name = name;
         }
     }
 }

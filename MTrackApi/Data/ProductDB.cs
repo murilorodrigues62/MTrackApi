@@ -8,17 +8,24 @@ namespace MTrackApi.Data
 {
     public static class ProductDB
     {
-        public static List<Product> Products()  {
+        private static readonly List<Product> products = new List<Product> (new[] 
+            {new Product(1, "0001", "ASA RESFRIADA"),
+             new Product(2, "0101", "PEITO CONGELADO"),
+             new Product(3, "0005", "FRANGO INTEIRO"),
+             new Product(4, "0012", "PE CONGELADO"),
+             new Product(5, "0031", "MEIO DA ASA"),
+             new Product(6, "1122", "CORACAO RESFRIADO")
+            });
 
-            List<Product> products = new List<Product>();
-            products.Add(new Product(1, "0001", "ASA RESFRIADA"));
-            products.Add(new Product(2, "0101", "PEITO CONGELADO"));
-            products.Add(new Product(3, "0005", "FRANGO INTEIRO"));
-            products.Add(new Product(4, "0012", "PE CONGELADO"));
-            products.Add(new Product(5, "0031", "MEIO DA ASA"));
-            products.Add(new Product(6, "1122", "CORACAO RESFRIADO"));
-
-            return products;        
+        public static List<Product> findAll()
+        {
+            return products;
         }
+
+        public static Product findById(int id)
+        {
+            return products.Find(item => item.Id == id);
+        }
+
     }
 }

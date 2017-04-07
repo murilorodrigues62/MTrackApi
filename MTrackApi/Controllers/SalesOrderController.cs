@@ -10,20 +10,20 @@ using System.Web.Http;
 namespace MTrackApi.Controllers
 {
     [RoutePrefix("api")]
-    public class ProductController : ApiController
+    public class SalesOrderController : ApiController
     {
         [AcceptVerbs("GET")]
-        [Route("product")]
-        public List<Product> FindAll()
+        [Route("order")]
+        public List<SalesOrder> FindAll()
         {
-            return ProductDB.findAll();
+            return SalesOrderDB.findAll();
         }
 
         [AcceptVerbs("GET")]
-        [Route("product/{id}")]
-        public Product FindById(int id)
+        [Route("order/{id}")]
+        public SalesOrder FindById(int id)
         {
-            return ProductDB.findById(id);
+            return SalesOrderDB.findById(id);
         }
     }
 }

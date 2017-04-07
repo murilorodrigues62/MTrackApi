@@ -14,9 +14,16 @@ namespace MTrackApi.Controllers
     {
         [AcceptVerbs("GET")]
         [Route("customer")]
-        public List<Customer> Get()
+        public List<Customer> FindAll()
         {
-            return CustomerDB.Customers();
+            return CustomerDB.findAll();
+        }
+
+        [AcceptVerbs("GET")]
+        [Route("customer/{id}")]
+        public Customer FindById(int id)
+        {
+            return CustomerDB.findById(id);
         }
     }
 }
