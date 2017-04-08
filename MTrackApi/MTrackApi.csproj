@@ -239,9 +239,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SalesOrderController.cs" />
+    <Compile Include="Controllers\SalesOrderPackageController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\CustomerDB.cs" />
     <Compile Include="Data\SalesOrderDB.cs" />
+    <Compile Include="Data\SalesOrderItemDB.cs" />
+    <Compile Include="Data\SalesOrderPackageDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,6 +256,7 @@
     <Compile Include="Data\ProductDB.cs" />
     <Compile Include="Models\SalesOrder.cs" />
     <Compile Include="Models\SalesOrderItem.cs" />
+    <Compile Include="Models\SalesOrderPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

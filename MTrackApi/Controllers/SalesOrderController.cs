@@ -25,5 +25,12 @@ namespace MTrackApi.Controllers
         {
             return SalesOrderDB.findById(id);
         }
+
+        [AcceptVerbs("GET")]
+        [Route("transporter/{id}/order")]
+        public List<SalesOrder> FindTransporter(string id)
+        {
+            return SalesOrderDB.findByTransporter(id);
+        }
     }
 }

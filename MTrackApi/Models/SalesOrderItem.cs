@@ -5,9 +5,15 @@ namespace MTrackApi.Models
 {
     public class SalesOrderItem
     {
-        public static implicit operator List<object>(SalesOrderItem v)
+        public int Id { get; set; }
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
+
+        public SalesOrderItem(int id, Product product, int quantity)
         {
-            throw new NotImplementedException();
-        }
+            Id = id;
+            Product = product;
+            Quantity = quantity;
+        }      
     }
 }
