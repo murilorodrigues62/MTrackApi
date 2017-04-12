@@ -30,20 +30,18 @@ namespace MTrackApi.Data
         }
 
         public static List<SalesOrderPackage> findByDelivery(int id)
-        {
-            /*
-            List<SalesOrderPackage> deliveryPackages = new List<SalesOrderPackage>();
-
-            foreach (SalesOrderPackage item in packages)
-            {
-                if (item.IdDelivery == id)
-                {
-                    deliveryPackages.Add(item);
-                }
-            }
-            return deliveryPackages;
-            */
+        {           
             return packages.FindAll(item => item.IdDelivery == id);
+        }
+        
+        public static bool updateSalesOrderReal(SalesOrderPackage package)
+        {
+            SalesOrderPackage packageUpdate =  packages.Find(item => item.IdDelivery == package.IdDelivery ||
+                                                                     item.IdProduct == package.IdProduct ||
+                                                                     item.Barcode == package.Barcode);
+            packageUpdate.IdSalesOrderReal = package.IdSalesOrderReal;
+
+            return true;
         }        
     }
 }

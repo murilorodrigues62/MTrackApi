@@ -25,6 +25,13 @@ namespace MTrackApi.Controllers
         {
             return SalesOrderPackageDB.findByDelivery(id);
         }
+
+        [AcceptVerbs("PUT")]
+        [Route("package")]
+        public bool UpdateSalesOrderReal(SalesOrderPackage package)
+        {
+            return SalesOrderPackageDB.updateSalesOrderReal(package);
+        }
     }
  
 }
