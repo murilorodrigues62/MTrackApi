@@ -32,6 +32,14 @@ namespace MTrackApi.Controllers
         {
             return SalesOrderPackageDB.updateSalesOrderReal(package);
         }
+        
+        [AcceptVerbs("GET")]
+        [Route("transporter/{id}/package")]
+        public List<SalesOrderPackage> FindByTransporter(string id)
+        {
+            return SalesOrderPackageDB.findByTransporter(id);
+        }
+
     }
- 
+
 }

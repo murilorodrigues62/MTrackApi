@@ -13,13 +13,15 @@ namespace MTrackApi.Models
         public int IdProduct { get; set; }
         public string Barcode { get; set; }
         public int IdSalesOrderReal { get; set; }
+        public string TransporterCode { get; set; }
 
-        public SalesOrderPackage(int idSalesOrder, int idDelivery, int idProduct, string barcode)
+        public SalesOrderPackage(int idSalesOrder, int idDelivery, int idProduct, string barcode, string transporterCode)
         {
             IdSalesOrder = idSalesOrder;
             IdDelivery = idDelivery;
             IdProduct = idProduct;
-            Barcode = barcode;              
+            Barcode = barcode;
+            TransporterCode = transporterCode;
         }      
     }
 }

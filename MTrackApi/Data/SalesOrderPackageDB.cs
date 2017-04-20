@@ -10,19 +10,20 @@ namespace MTrackApi.Data
     {
         private static readonly List<SalesOrderPackage> packages = new List<SalesOrderPackage>(new[]
         {
-            new SalesOrderPackage(279728, 29797, 1, "00011"),
-            new SalesOrderPackage(279728, 29797, 1, "00012"),
-            new SalesOrderPackage(279731, 29797, 1, "00013"),
-            new SalesOrderPackage(279731, 29797, 1, "00014"),
-            new SalesOrderPackage(279731, 29797, 1, "00015"),
-            new SalesOrderPackage(279731, 29797, 1, "00016"),
-            new SalesOrderPackage(279731, 29797, 1, "00017"),
-            new SalesOrderPackage(279728, 29797, 2, "01011"),
-            new SalesOrderPackage(279728, 29797, 2, "01012"),
-            new SalesOrderPackage(279728, 29797, 3, "00051"),
-            new SalesOrderPackage(279728, 29797, 3, "00052"),
-            new SalesOrderPackage(279728, 29797, 4, "00121"),
-            new SalesOrderPackage(279728, 29797, 5, "00311") });
+            new SalesOrderPackage(279728, 29797, 1, "00011", "1"),
+            new SalesOrderPackage(279728, 29797, 1, "00012", "1"),
+            new SalesOrderPackage(279731, 29797, 1, "00013", "1"),
+            new SalesOrderPackage(279731, 29797, 1, "00014", "1"),
+            new SalesOrderPackage(279731, 29797, 1, "00015", "1"),
+            new SalesOrderPackage(279731, 29797, 1, "00016", "1"),
+            new SalesOrderPackage(279731, 29797, 1, "00017", "1"),
+            new SalesOrderPackage(279728, 29797, 2, "01011", "1"),
+            new SalesOrderPackage(279728, 29797, 2, "01012", "1"),
+            new SalesOrderPackage(279728, 29797, 3, "00051", "1"),
+            new SalesOrderPackage(279728, 29797, 3, "00052", "1"),
+            new SalesOrderPackage(279728, 29797, 4, "00121", "1"),
+            new SalesOrderPackage(279728, 29797, 5, "00311", "1"),
+            new SalesOrderPackage(279999, 29799, 5, "00399", "2")});
         
         public static List<SalesOrderPackage> findAll()
         {
@@ -33,7 +34,12 @@ namespace MTrackApi.Data
         {           
             return packages.FindAll(item => item.IdDelivery == id);
         }
-        
+
+        public static List<SalesOrderPackage> findByTransporter(String code)
+        {
+            return packages.FindAll(item => item.TransporterCode.Equals(code));
+        }
+
         public static bool updateSalesOrderReal(SalesOrderPackage package)
         {
             SalesOrderPackage packageUpdate =  packages.Find(item => item.IdDelivery == package.IdDelivery ||
