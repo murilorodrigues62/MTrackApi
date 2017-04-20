@@ -28,9 +28,9 @@ namespace MTrackApi.Controllers
 
         [AcceptVerbs("PUT")]
         [Route("package")]
-        public bool UpdateSalesOrderReal(SalesOrderPackage package)
+        public bool UpdateSalesOrderReal(List<SalesOrderPackage> salesOrderPackages)
         {
-            return SalesOrderPackageDB.updateSalesOrderReal(package);
+            return SalesOrderPackageDB.updateSalesOrderReal(salesOrderPackages);
         }
         
         [AcceptVerbs("GET")]

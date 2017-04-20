@@ -40,12 +40,15 @@ namespace MTrackApi.Data
             return packages.FindAll(item => item.TransporterCode.Equals(code));
         }
 
-        public static bool updateSalesOrderReal(SalesOrderPackage package)
+        public static bool updateSalesOrderReal(List<SalesOrderPackage> salesOrderPackages)
         {
-            SalesOrderPackage packageUpdate =  packages.Find(item => item.IdDelivery == package.IdDelivery ||
-                                                                     item.IdProduct == package.IdProduct ||
-                                                                     item.Barcode == package.Barcode);
-            packageUpdate.IdSalesOrderReal = package.IdSalesOrderReal;
+            foreach (SalesOrderPackage salesOrderPackage in salesOrderPackages)
+            {
+                SalesOrderPackage packageUpdate = packages.Find(item => item.IdDelivery == salesOrderPackage.IdDelivery &&
+                                                                    item.IdProduct == salesOrderPackage.IdProduct &&
+                                                                    item.Barcode == salesOrderPackage.Barcode);
+                packageUpdate.IdSalesOrderReal = salesOrderPackage.IdSalesOrderReal;
+            }
 
             return true;
         }        
